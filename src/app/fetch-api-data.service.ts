@@ -11,16 +11,20 @@ import { map } from 'rxjs/operators';
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://myflix-d2kt.onrender.com/';
 
+interface userData {
+  Username: string;
+  Password: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
-export class ApiService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {}
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
@@ -48,6 +52,7 @@ export class ApiService {
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
+
   // Non-typed response extraction
   private extractResponseData(res: Object): any {
     const body = res;
@@ -55,7 +60,7 @@ export class ApiService {
   }
 
   // User login endpoint
-  public userLogin(userData: any): Observable<any> {
+  public userLogin(userData: userData): Observable<any> {
     return this.http
       .post(apiUrl + 'login', userData)
       .pipe(map(this.extractResponseData), catchError(this.handleError));
