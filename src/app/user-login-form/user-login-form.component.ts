@@ -28,9 +28,10 @@ export class UserLoginFormComponent implements OnInit {
         this.snackBar.open('Login successful!', 'OK', {
           duration: 2000,
         });
-        console.log(result);
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', result.user);
+
+        this.router.navigate(['movies']);
       },
       (result) => {
         this.snackBar.open(result, 'OK', {
@@ -38,6 +39,5 @@ export class UserLoginFormComponent implements OnInit {
         });
       }
     );
-    this.router.navigate(['movies']);
   }
 }
