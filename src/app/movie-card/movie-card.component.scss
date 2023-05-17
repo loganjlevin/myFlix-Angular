@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 15px;
+  margin: 30px;
+  padding: 30px;
+  justify-content: center;
+}
+
+mat-card {
+  max-width: 300px;
+}
+
+mat-card-header {
+  height: 15%;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+img {
+  height: 70%;
+  object-fit: contain;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-button {
+  margin-right: 10px;
+  padding: 0px;
+  border: none;
+  background-color: #fff;
+}
+mat-icon {
+  margin: 0px !important;
+}
+mat-icon:hover {
+  color: #e91e63;
+}
+
+mat-icon.is-favorite {
+  color: #e91e63;
+}
+mat-icon.is-favorite:hover {
+  color: #fff;
+}
