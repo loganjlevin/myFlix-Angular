@@ -1,1 +1,66 @@
-<p>user-profile works!</p>
+<app-nav-bar></app-nav-bar>
+<div class="profile-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>User Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Username: {{ user.Username }}</p>
+      <p>Email: {{ user.Email }}</p>
+      <p>Birthday: {{ user.Birthday | date : 'longDate' }}</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Update User Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="updatedUser.Username"
+            placeholder="Username"
+            type="text"
+            name="Username"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="updatedUser.Password"
+            type="password"
+            placeholder="Password"
+            name="Password"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="updatedUser.Email"
+            type="email"
+            placeholder="Email"
+            name="Email"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [(ngModel)]="updatedUser.Birthday"
+            type="date"
+            placeholder="Birthday"
+            name="Birthday"
+          />
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="updateUserInfo()" color="primary">
+        Update Info
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

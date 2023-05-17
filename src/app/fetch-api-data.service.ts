@@ -103,8 +103,9 @@ export class FetchApiDataService {
   }
 
   // Get user by id
-  public getUser(id: number): Observable<any> {
+  public getUser(): Observable<any> {
     const token = localStorage.getItem('token');
+    const id = localStorage.getItem('id');
     return this.http
       .get(apiUrl + 'users/' + id, {
         headers: new HttpHeaders({
@@ -139,8 +140,9 @@ export class FetchApiDataService {
   }
 
   // Update a user's info
-  public updateUser(id: number, userDetails: any): Observable<any> {
+  public updateUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
+    const id = localStorage.getItem('id');
     return this.http
       .put(
         apiUrl + 'users/' + id,

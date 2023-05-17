@@ -1,25 +1,12 @@
 <mat-toolbar>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
+  <button mat-button class="nav-logo" (click)="allMovies()">MyFlix</button>
+  <button mat-button (click)="allMovies()">
+    <mat-icon>home</mat-icon>Home
   </button>
-  <span>MyFlix</span>
-  <span class="example-spacer"></span>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
+  <button mat-button (click)="userProfile()">
+    <mat-icon>account_circle</mat-icon>Profile
   </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
+  <button mat-button (click)="logout()">
+    <mat-icon>logout</mat-icon>Logout
   </button>
 </mat-toolbar>
