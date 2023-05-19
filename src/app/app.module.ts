@@ -21,6 +21,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     UserProfileComponent,
     NavBarComponent,
+    DialogComponent,
   ],
   imports: [
     MatIconModule,

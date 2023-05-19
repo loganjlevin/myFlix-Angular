@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  favorites: any[] = [];
+  favorites: string[] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -54,6 +55,36 @@ export class MovieCardComponent implements OnInit {
         duration: 2000,
       });
       this.ngOnInit();
+    });
+  }
+
+  openGenreDialog(genre: any): void {
+    this.dialog.open(DialogComponent, {
+      width: '500px',
+      data: {
+        title: genre.Name,
+        body: genre.Description,
+      },
+    });
+  }
+
+  openDirectorDialog(director: any): void {
+    this.dialog.open(DialogComponent, {
+      width: '500px',
+      data: {
+        title: director.Name,
+        body: director.Bio,
+      },
+    });
+  }
+
+  openDescriptionDialog(description: any): void {
+    this.dialog.open(DialogComponent, {
+      width: '500px',
+      data: {
+        title: 'Description',
+        body: description,
+      },
     });
   }
 }
