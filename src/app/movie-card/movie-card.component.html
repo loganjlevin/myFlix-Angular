@@ -9,15 +9,28 @@
     </mat-card-header>
     <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
     <mat-card-actions>
-      <div>
-        <button mat-button (click)="openGenreDialog(movie.Genre)">Genre</button>
-        <button mat-button (click)="openDirectorDialog(movie.Director)">
-          Director
-        </button>
-        <button mat-button (click)="openDescriptionDialog(movie.Description)">
-          Description
-        </button>
-      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openGenreDialog(movie.Genre)"
+      >
+        Genre
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openDirectorDialog(movie.Director)"
+      >
+        Director
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openDescriptionDialog(movie.Description)"
+      >
+        Description
+      </button>
+
       <button
         class="icon-button"
         *ngIf="!isFavorite(movie._id)"

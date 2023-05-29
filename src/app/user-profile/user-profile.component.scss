@@ -7,10 +7,12 @@
   padding: 30px;
   gap: 30px 30px;
   background-color: #202020;
+  height: 100vh;
 }
 
 mat-card {
   width: 400px;
+  height: 500px;
 }
 
 .user-info {
@@ -26,7 +28,7 @@ mat-card-title {
 }
 
 .user-info-update {
-  padding-top: 20px;
+  justify-content: space-between;
 }
 
 span {

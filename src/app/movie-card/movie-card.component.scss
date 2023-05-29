@@ -26,6 +26,10 @@ img {
   object-fit: contain;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
 mat-card-actions {
   display: flex;
   justify-content: space-between;
