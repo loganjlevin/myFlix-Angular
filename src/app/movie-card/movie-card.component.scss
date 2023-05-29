@@ -5,13 +5,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px 15px;
-  margin: 30px;
-  padding: 30px;
+  padding: 60px;
   justify-content: center;
+  background-color: #202020;
 }
 
 mat-card {
   max-width: 300px;
+  background-color: #fcfcfc;
 }
 
 mat-card-header {
@@ -34,7 +35,8 @@ mat-card-actions {
   margin-right: 10px;
   padding: 0px;
   border: none;
-  background-color: #fff;
+  background-color: #fcfcfc;
+  color: #202020;
 }
 mat-icon {
   margin: 0px !important;
@@ -47,5 +49,5 @@ mat-icon.is-favorite {
   color: #e91e63;
 }
 mat-icon.is-favorite:hover {
-  color: #fff;
+  color: #202020;
 }

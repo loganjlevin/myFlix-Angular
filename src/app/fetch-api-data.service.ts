@@ -120,11 +120,15 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     const userId = localStorage.getItem('id');
     return this.http
-      .post(apiUrl + 'users/' + userId + '/movies/' + movieId, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
+      .post(
+        apiUrl + 'users/' + userId + '/movies/' + movieId,
+        {},
+        {
+          headers: new HttpHeaders({
+            Authorization: 'Bearer ' + token,
+          }),
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
@@ -146,21 +150,18 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     const id = localStorage.getItem('id');
     return this.http
-      .put(
-        apiUrl + 'users/' + id,
-        {
-          headers: new HttpHeaders({
-            Authorization: 'Bearer ' + token,
-          }),
-        },
-        userDetails
-      )
+      .put(apiUrl + 'users/' + id, userDetails, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Delete user
-  public deleteUser(id: number): Observable<any> {
+  public deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
+    const id = localStorage.getItem('id');
     return this.http
       .delete(apiUrl + 'users/' + id, {
         headers: new HttpHeaders({
