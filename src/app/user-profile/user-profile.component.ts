@@ -70,20 +70,12 @@ export class UserProfileComponent implements OnInit {
         'Are you sure you want to delete your profile? All data will be lost.'
       )
     ) {
-      this.fetchApiData.deleteUser().subscribe(
-        (response) => {
-          this.snackBar.open(response, 'OK', {
-            duration: 2000,
-          });
-          localStorage.clear();
-          this.router.navigate(['welcome']);
-        },
-        (response) => {
-          this.snackBar.open(response, 'OK', {
-            duration: 2000,
-          });
-        }
-      );
+      this.fetchApiData.deleteUser().subscribe();
+      localStorage.clear();
+      this.router.navigate(['welcome']);
+      this.snackBar.open('Profile successfully deleted', 'OK', {
+        duration: 2000,
+      });
     }
   }
 }
