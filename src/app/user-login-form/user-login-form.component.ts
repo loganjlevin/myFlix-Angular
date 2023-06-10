@@ -21,6 +21,10 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Logs the user into the API by receiving a token and storing the user's id and the token in local storage 
+   * then navigating to the movies screen
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (result) => {

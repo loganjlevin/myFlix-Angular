@@ -34,6 +34,11 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Makes an API call to get user info from the database
+   * @function getUser
+   * @returns JSON object with user information
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe(
       (response) => {
@@ -47,6 +52,12 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
+  /**
+   * Updates the user's info in the database by sending a new user object
+   * then gets the new user info by calling the getUser function
+   * @function updateUserInfo
+   *
+   */
   updateUserInfo(): void {
     this.fetchApiData.updateUser(this.updatedUser).subscribe(
       (response) => {
@@ -64,6 +75,10 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
+  /**
+   * Deletes the user from the database and then logs out and return the to welcome page
+   * @function deleteUserProfile
+   */
   deleteUserProfile(): void {
     if (
       confirm(
